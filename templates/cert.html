@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'cert.css' %}">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'>
+</head>
+<body>
+    <div class="d-flex flex-column justify-content-center w-100 h-100">
+    
+    <header>
+        <img src="{% static 'logo.png' %}" alt="logo">
+        <h2>Get Your Certificate</h2>
+    </header>
+
+    <main>
+        <label for="name">Enter Your Name</label>
+        <input type="text" name="name" id="name" autocapitalize="name" placeholder="Your Name" required> 
+        <button id="submit">Get Certificate</button> <br>
+        <a href="{% url 'home' %}"><button id="submit">HOME</button></a>
+    </main>
+</div>
+
+    <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+    <script src="https://unpkg.com/@pdf-lib/fontkit@0.0.4"></script>
+    <script src="{% static 'FileSever.js' %}"></script>
+    <!-- <script src="{% static 'index.js' %}"></script> -->
+    <script>
+        let name = document.getElementById('name');
+let submit = document.getElementById('submit');
+submit.addEventListener('click',()=>{
+    let credentialUser = Math.ceil(Math.random()*10000);
+    let str = "TSStudetn2020"+credentialUser.toString();
+    generetPdf(name.value,str);
+    name.value = '';
+})
+
+
+const generetPdf = async (name,cr)=>{
+    const {PDFDocument,rgb} = PDFLib;
+
+    const exBytes = await fetch("{% static 'Certificate.pdf' %}").then((res)=>{
+        return res.arrayBuffer()
+    });
+
+    const exFont = await fetch("{% static 'Ubuntu-Regular.ttf' %}").then((res)=>{
+        return res.arrayBuffer();
+    })
+
+
+    
+    
+    const pdfDoc = await PDFDocument.load(exBytes)
+    
+    pdfDoc.registerFontkit(fontkit);
+    const myFont = await pdfDoc.embedFont(exFont);
+
+    const pages = pdfDoc.getPages();
+    const firstP = pages[0];
+    firstP.drawText(name,{
+        x:330,
+        y:340,
+        size:70,
+        font:myFont,
+        color: rgb(.2, 0.84, 0.67)
+    })
+
+    firstP.drawText(cr,{
+        x:600,
+        y:45,
+        size:15,
+        font:myFont,
+        color: rgb(0, 0.76, 0.8)
+    })
+
+    const uri = await pdfDoc.saveAsBase64({dataUri: true}); //to dave as a pdf 
+    saveAs(uri,"Certificate.pdf",{autoBom:true})
+    // document.querySelector("#myPDF").src = uri;
+};
+    </script>
+</body>
+</html>

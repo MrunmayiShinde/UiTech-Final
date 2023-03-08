@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Blog1</title>
+  <link rel="icon" type="image/x-icon" href="logo.png">
+  <link rel="stylesheet" href="{% static 'blog1a.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+
+</head>
+
+<body>
+  <!DOCTYPE html>
+  <html lang="en-US">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'>
+    <link rel="stylesheet" href="./style1.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <script>
+      window.ga = window.ga || function () {
+        (ga.q = ga.q || []).push(arguments)
+      };
+      ga.l = +new Date;
+      ga('create', 'UA-105392568-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+  </head>
+
+  <body>
+    <header>
+		<a href="{% url 'home' %}" class="logo"><span>UI Tech</span></a>
+
+		<ul class="navbar">
+			<li><a href="{% url 'home' %}" class="active">Home</a></li>
+			<li><a href="{% url 'blog' %}">Blog</a></li>
+			<li><a href="{% url 'temp' %}">Templates</a></li>
+			<li><a href="{% url 'aboutus' %}">About</a></li>
+			<li><a href="{% url 'contact' %}">Contact</a></li>
+		</ul>
+
+		
+    {% if user.is_authenticated %}
+		<h4>Hello,{{user.username}}</h4>
+		<a href="{% url 'logout' %}"><button class="glow-on-hover"> LOGOUT</button></a>
+		{% else %}
+		<div class="main">
+			<a href="{% url 'login' %}" class="user"><i class="ri-user-fill"></i>Sign In</a>
+			<a href="{% url 'register' %}">Register</a>
+			<div class="bx bx-menu" id="menu-icon"></div>
+		</div>
+		{% endif %}
+	</header>
+  <section class="butt ">
+    <a href="{% url 'cert' %}"><button class="btn1 glow-on-hover" id="btn1">
+      Next Page
+    </button></a>
+  
+  <div class="content1">
+    <div class="title1">
+      CAREER SCOPE & SALARY
+      </div>
+    <p class="txt">
+      The field of UI/UX design has seen significant growth in recent years, and the demand for UI/UX designers is expected to continue to increase. Here are some reasons why UI/UX design is a promising career path:
+                <br><br>High demand: As technology continues to play a larger role in our daily lives, the demand for user-friendly and intuitive digital products is increasing, leading to a growing need for UI/UX designers.
+                <br><br>Wide range of industries: UI/UX design is relevant to a wide range of industries, including technology, finance, healthcare, and e-commerce, providing a wide range of career opportunities for designers.
+                <br><br>Competitive salary: UI/UX designers are in high demand, and their salaries reflect this demand, with average salaries ranging from $75,000 to $140,000, depending on experience and location.
+                <br><br>Opportunity for growth: UI/UX design is a rapidly evolving field, and designers have the opportunity to continuously learn and grow their skills, leading to new and exciting career opportunities.
+                <br><br>Career stability: As the importance of user-friendly and intuitive digital products continues to grow, the demand for UI/UX designers is expected to remain steady, providing a stable career path for designers.
+                <br><br>In conclusion, UI/UX design is a promising and rewarding career path with a wide range of opportunities for growth and advancement. With the continued growth of technology, the demand for UI/UX designers is expected to remain high, making it an attractive and stable career option for individuals with a passion for design and technology.
+                <br><br>
+                <b> SALARY:</b>
+              <br><br>The salary of an UI/UX designer varies based on several factors, including:
+              <br><br>Location: Salaries for UI/UX designers can vary significantly based on the location of the job, with cities such as San Francisco, New York, and London having some of the highest salaries in the field.
+              <br><br>Experience: UI/UX designers with more experience typically earn higher salaries than those with less experience.
+              <br><br>Industry: Salaries for UI/UX designers can vary based on the industry in which they work, with tech and finance industries typically offering higher salaries than other industries.
+              <br><br>Company size: The size of the company can also impact the salary of an UI/UX designer, with larger companies typically offering higher salaries than smaller companies.
+              <br><br>On average, a UI/UX designer in the United States can expect to earn a salary of around $75,000 to $140,000 per year, with the median salary being $95,000 per year. However, it is important to note that these numbers are just estimates, and actual salaries can vary widely based on the factors mentioned above.
+                
+                
+      
+      
+    </p>
+  </div><br>
+  
+  <script>
+    const button = document.querySelector('#btn1');
+
+button.disabled = true;
+
+window.addEventListener('scroll', () => {
+
+  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+    button.disabled = false;
+  }
+});
+  </script>
+
+  </body>
+
+  </html>

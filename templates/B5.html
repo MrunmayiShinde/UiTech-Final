@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Blog1</title>
+  <link rel="icon" type="image/x-icon" href="logo.png">
+  <link rel="stylesheet" href="{% static 'blog1a.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+
+</head>
+
+<body>
+  <!DOCTYPE html>
+  <html lang="en-US">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'>
+    <link rel="stylesheet" href="./style1.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <script>
+      window.ga = window.ga || function () {
+        (ga.q = ga.q || []).push(arguments)
+      };
+      ga.l = +new Date;
+      ga('create', 'UA-105392568-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+  </head>
+
+  <body>
+    <header>
+		<a href="{% url 'home' %}" class="logo"><span>UI Tech</span></a>
+
+		<ul class="navbar">
+			<li><a href="{% url 'home' %}" class="active">Home</a></li>
+			<li><a href="{% url 'blog' %}">Blog</a></li>
+			<li><a href="{% url 'temp' %}">Templates</a></li>
+			<li><a href="{% url 'aboutus' %}">About</a></li>
+			<li><a href="{% url 'contact' %}">Contact</a></li>
+		</ul>
+
+		
+    {% if user.is_authenticated %}
+		<h4>Hello,{{user.username}}</h4>
+		<a href="{% url 'logout' %}"><button class="glow-on-hover"> LOGOUT</button></a>
+		{% else %}
+		<div class="main">
+			<a href="{% url 'login' %}" class="user"><i class="ri-user-fill"></i>Sign In</a>
+			<a href="{% url 'register' %}">Register</a>
+			<div class="bx bx-menu" id="menu-icon"></div>
+		</div>
+		{% endif %}
+	</header>
+  <section class="butt ">
+    <a href="{% url 'B6' %}"><button class="btn1 glow-on-hover" id="btn1">
+      Next Page
+    </button></a>
+  
+  <div class="content1">
+    <div class="title1">
+     CONNECTION & PROTOTYPING
+      </div>
+    <p class="txt">     Creating connections or linking between different pages in a prototype is a crucial aspect of UI/UX design. Here are the steps to create connections while designing a prototype:
+      <br><br>Choose a design tool: Choose a design tool, such as Figma, Sketch, or Adobe XD, that supports prototyping and linking.
+      <br><br>Create a basic wireframe: Create a basic wireframe for each page in your prototype, including all the elements and content you want to include.
+      <br><br>Add interactive elements: Add interactive elements, such as buttons and links, to your wireframe to allow users to navigate from one page to another.
+      <br><br>Link the pages: To link the pages, select the interactive element, such as a button, and click on the “Link” option in your design tool. Then, select the page you want to link to.
+      <br><br>Preview the prototype: Preview the prototype to see how the links and interactions work. Make any necessary adjustments to ensure a seamless experience for the user.
+      <br><br>Test the prototype: Test the prototype with users to see how they interact with the design and to identify any potential issues.
+      <br><br>Refine the prototype: Based on feedback from user testing, refine the prototype by making any necessary changes to the links, interactions, and overall design.
+      <br><br>Publish the prototype: When you are satisfied with your prototype, you can publish it for others to see and use.
+      By following these steps, you can create a functional and user-friendly prototype that helps you to test and refine your design ideas before launching the final product.
+      <br><br>
+      
+      <b>Importance of prototyping in UI/UX:</b>
+      <br>Prototyping is an important step in the UI/UX design process and has several benefits, including:
+      <br><br>Communication: Prototyping allows designers to communicate their ideas and designs to stakeholders and clients, providing a visual representation of the final product.
+      <br><br>Testing: Prototyping enables designers to test their designs with users and receive feedback on the user experience. This helps to identify and address any potential issues before the final product is launched.
+      <br><br>Refinement: Based on feedback from user testing, prototypes can be refined and improved to ensure a better user experience.
+      <br><br>Time and Cost Savings: Prototyping helps to reduce the time and cost of development by identifying and resolving design issues early in the process.
+      <br><br>Improved Collaboration: Prototyping provides a shared platform for designers, developers, and stakeholders to collaborate and contribute to the design process.
+      <br><br>Increased User Engagement: Prototyping enables designers to create interactive designs that engage users and provide a more immersive experience.
+      In conclusion, prototyping is a crucial step in the UI/UX design process that helps to ensure a well-designed, user-friendly final product. By incorporating prototyping into your design process, you can save time, reduce costs, and improve the overall user experience.
+      
+
+
+      
+    </p>
+  </div><br>
+  <script>
+    const button = document.querySelector('#btn1');
+
+button.disabled = true;
+
+window.addEventListener('scroll', () => {
+
+  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+    button.disabled = false;
+  }
+});
+  </script>
+  </body>
+
+  </html>

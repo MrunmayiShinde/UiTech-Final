@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Page</title>
+  <link rel="icon" type="image/x-icon" href="logo.png">
+
+  <link rel="stylesheet" href="{% static 'register.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  
+
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Login</title>
+  <link rel="icon" type="image/x-icon" href="logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+  <script>
+    window.ga = window.ga || function() {
+      (ga.q = ga.q || []).push(arguments)
+    };
+    ga.l = +new Date;
+    ga('create', 'UA-105392568-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</head>
+
+<body>
+  <video id="background-video" autoplay loop muted poster="#" class="vid">
+		<source src="{% static 'Pexels Videos 2157006.mp4' %}" type="video/mp4" onload="">
+	</video>
+  <header>
+		<a href="{% url 'home' %}" class="logo"><span>UI Tech</span></a>
+
+		<ul class="navbar">
+			<li><a href="{% url 'home' %}" >Home</a></li>
+			<li><a href="{% url 'blog' %}">Blog</a></li>
+			<li><a href="{% url 'temp' %}">Templates</a></li>
+			<li><a href="{% url 'aboutus' %}">About</a></li>
+			<li><a href="{% url 'contact' %}">Contact</a></li>
+		</ul>
+
+		<div class="main">
+			<a href="{% url 'login' %}" class="user"><i class="ri-user-fill"></i>Sign In</a>
+			<a href="{% url 'register' %}"class="active">Register</a>
+			<div class="bx bx-menu" id="menu-icon"></div>
+		</div>
+	</header>
+    <div class="container">
+        <form name="registration" class="registartion-form" onsubmit="return formValidation()" action="" method="post">
+          {% csrf_token %}
+          <table>
+            <tr>
+              <td><label for="name">Name:</label></td>
+              <td><input type="text" name="name" id="name" placeholder="Username"></td>
+            </tr>
+            <tr>
+              <td><label for="email">Email:</label></td>
+              <td><input type="text" name="email" id="email" placeholder="mail"></td>
+            </tr>
+            <tr>
+              <td><label for="password">Password:</label></td>
+              <td><input type="password" name="password" id="password"></td>
+            </tr>
+            <tr>
+              <td><label for="password">Confirm Password:</label></td>
+              <td><input type="password" name="password1" id="password"></td>
+            </tr>
+            <tr>
+              <td colspan="2"><input type="submit" class="submit" value="Register" /></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      <script>
+const name = document.getElementById("name");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const phoneNumber = document.getElementById("phoneNumber");
+const gender = document.registration;
+const language = document.getElementById("language");
+const zipcode = document.getElementById("zipcode");
+
+function formValidation() {
+  
+  if (name.value.length < 2 || name.value.length > 20) {
+    alert("Name length should be more than 2 and less than 21");
+    name.focus();
+    return false;
+  }
+  // if (email.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
+  //   alert("Please enter a valid email!");
+  //   email.focus();
+  //   return false;
+  // }
+  if (!password.value.match(/^.{5,15}$/)) {
+    alert("Password length must be between 5-15 characters!");
+    password.focus();
+    return false;
+  }
+  if (!phoneNumber.value.match(/^[1-9][0-9]{9}$/)) {
+    alert("Phone number must be 10 characters long number and first digit can't be 0!");
+    phoneNumber.focus();
+    return false;
+  }
+  if (gender.gender.value === "") {
+    alert("Please select your gender!");
+    return false;
+  }
+  if (!zipcode.value.match(/^[0-9]{6}$/)) {
+    alert("Zip code must be 6 characters long number!");
+    zipcode.focus();
+    return false;
+  }
+  return true;
+}
+      </script>
+  </body>
+  </html>

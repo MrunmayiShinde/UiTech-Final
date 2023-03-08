@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Blog1</title>
+  <link rel="icon" type="image/x-icon" href="logo.png">
+  <link rel="stylesheet" href="{% static 'blog1a.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+
+</head>
+
+<body>
+  <!DOCTYPE html>
+  <html lang="en-US">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'>
+    <link rel="stylesheet" href="./style1.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <script>
+      window.ga = window.ga || function () {
+        (ga.q = ga.q || []).push(arguments)
+      };
+      ga.l = +new Date;
+      ga('create', 'UA-105392568-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+  </head>
+
+  <body>
+    <header>
+		<a href="{% url 'home' %}" class="logo"><span>UI Tech</span></a>
+
+		<ul class="navbar">
+			<li><a href="{% url 'home' %}" class="active">Home</a></li>
+			<li><a href="{% url 'blog' %}">Blog</a></li>
+			<li><a href="{% url 'temp' %}">Templates</a></li>
+			<li><a href="{% url 'aboutus' %}">About</a></li>
+			<li><a href="{% url 'contact' %}">Contact</a></li>
+		</ul>
+
+		
+    {% if user.is_authenticated %}
+		<h4>Hello,{{user.username}}</h4>
+		<a href="{% url 'logout' %}"><button class="glow-on-hover"> LOGOUT</button></a>
+		{% else %}
+		<div class="main">
+			<a href="{% url 'login' %}" class="user"><i class="ri-user-fill"></i>Sign In</a>
+			<a href="{% url 'register' %}">Register</a>
+			<div class="bx bx-menu" id="menu-icon"></div>
+		</div>
+		{% endif %}
+	</header>
+  <section class="butt ">
+    <a href="{% url 'B1A' %}"><button class="btn1 glow-on-hover" id="btn1">
+      Next Page
+    </button></a>
+  </section>
+  
+  <div class="content1">
+    <div class="title1">
+      WHAT IS UI UX ?
+      </div>
+    <p class="txt">   Every interaction that we do, everything that we perceive and everything that we are bound to remember about any application or be it a website is the kind of a unique experience we had while using it. So to make that worth for every user the User interface and the User Experience comes into picture. Generally referred to as Ui / Ux all together.
+      But now the question comes up is how we can find a difference between these two as people generally perceive them as two similar kind of things .
+      <br>
+      <br>
+      So let me help you clear that up and start knowing about them from the very start:
+      User Interface - As the term itself says it is the interface that we are trying to design for our software. So, to put up in simple terms it is the visual designing done by a Ui designer by keeping the colours, typography, different layouts and many more things in mind.
+      User Experience: It is how we design the interface for the user to interact with. For this the designer needs to perform a good amount of research about his targeted audience to know about what might be the most convenient interaction that every group of users can have.It also has the phase where in the designer creates some wireframes and prototypes so that the stakeholders do have a clear glimpse of the entire software and how it will turn out to be.
+      <br><br>
+      So overall every Ui Ux designer always prioritises the user at first. 
+      Let's look at a example,
+      As we all browse social media applications it is quite familiar to all of us that we only reshare or repost some posts from different accounts if they are visually appealing. If there are 2 posts which have the same quote but one of them has a really amazing graphic design as its background and the other one is just some random image with a lot of pixel drop. It’s way too obvious that if we were to reshare one of the posts we would go with the 1st one as what's appealing to the eyes is what catches our attention.
+      This clearly explains why we should actually focus upon having the best possible visuals for the user.
+      <br><br>
+      To know in depth about the difference between user interface and user experience read the further blogs.
+      
+    </p>
+  </div><br>
+  <script>
+    const button = document.querySelector('#btn1');
+
+button.disabled = true;
+
+window.addEventListener('scroll', () => {
+
+  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+    button.disabled = false;
+  }
+});
+  </script>
+
+    
+  </body>
+
+  </html>

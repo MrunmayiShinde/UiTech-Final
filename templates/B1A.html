@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Blog1</title>
+  <link rel="icon" type="image/x-icon" href="logo.png">
+  <link rel="stylesheet" href="{% static 'blog1a.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+
+</head>
+
+<body>
+  <!DOCTYPE html>
+  <html lang="en-US">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'>
+    <link rel="stylesheet" href="./style1.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <script>
+      window.ga = window.ga || function () {
+        (ga.q = ga.q || []).push(arguments)
+      };
+      ga.l = +new Date;
+      ga('create', 'UA-105392568-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+  </head>
+
+  <body>
+    <header>
+		<a href="{% url 'home' %}" class="logo"><span>UI Tech</span></a>
+
+		<ul class="navbar">
+			<li><a href="{% url 'home' %}" class="active">Home</a></li>
+			<li><a href="{% url 'blog' %}">Blog</a></li>
+			<li><a href="{% url 'temp' %}">Templates</a></li>
+			<li><a href="{% url 'aboutus' %}">About</a></li>
+			<li><a href="{% url 'contact' %}">Contact</a></li>
+		</ul>
+
+    {% if user.is_authenticated %}
+		<h4>Hello,{{user.username}}</h4>
+		<a href="{% url 'logout' %}"><button class="glow-on-hover"> LOGOUT</button></a>
+		{% else %}
+		<div class="main">
+			<a href="{% url 'login' %}" class="user"><i class="ri-user-fill"></i>Sign In</a>
+			<a href="{% url 'register' %}">Register</a>
+			<div class="bx bx-menu" id="menu-icon"></div>
+		</div>
+		{% endif %}
+	</header>
+  <section class="butt ">
+    <a href="{% url 'B1B' %}"><button class="btn1 glow-on-hover" id="btn1">
+      Next Page
+    </button></a>
+
+  </section>
+  <div class="content1">
+    <div class="title1">
+      DIFFERENCE BETWEEN UI UX 
+      </div>
+    <p class="txt">  Any application designed for a particular task is performing really well in it but has a really simple
+      interface it does not matter much there(eg-banking application). But, when you are trying to build a brand
+      as a company or trying to grab user attention it is really necessary that we have some eye catchy visuals
+      that might make the user want to spend more time on the application. Having a website with tons of user
+      interactions but the users are unaware about the usage might be a real setback for the company. So the key
+      of making every application user friendly is using the simplest and the most relevant interactions that the
+      users are aware of or might have used before. This creates a sense of familiarity in the minds of users
+      while they are using the application.
+    </p><center><img src="{% static 'Diff between .png' %}" alt="" width="360px" height="750px"></center>
+  </div><br>
+    
+    <script>
+      const button = document.querySelector('#btn1');
+  
+  button.disabled = true;
+  
+  window.addEventListener('scroll', () => {
+  
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      button.disabled = false;
+    }
+  });
+    </script>
+  </body>
+
+  </html>

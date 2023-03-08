@@ -1,0 +1,336 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="{% static 'tempc.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  
+
+</head>
+  <header>
+<body background-image: linear-gradient(color, color); >
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css'>
+  <link rel="stylesheet" href="{% static 'tempc.css' %}">
+	<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+  <script>
+    window.ga = window.ga || function() {
+      (ga.q = ga.q || []).push(arguments)
+    };
+    ga.l = +new Date;
+    ga('create', 'UA-105392568-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</head>
+
+    <a href="{% url 'home' %}" class="logo"><span>UI Tech</span></a>
+
+    <ul class="navbar">
+      <li><a href="{% url 'home' %}" >Home</a></li>
+      <li><a href="{% url 'blog' %}">Blog</a></li>
+      <li><a href="{% url 'temp' %}"class="active">Templates</a></li>
+      <li><a href="{% url 'aboutus' %}">About</a></li>
+      <li><a href="{% url 'contact' %}">Contact</a></li>
+    </ul>
+
+		{% if user.is_authenticated %}
+		<h4>Hello,{{user.username}}</h4>
+		<a href="{% url 'logout' %}"><button class="glow-on-hover"> LOGOUT</button></a>
+		{% else %}
+		<div class="main">
+			<a href="{% url 'login' %}" class="user"><i class="ri-user-fill"></i>Sign In</a>
+			<a href="{% url 'register' %}">Register</a>
+			<div class="bx bx-menu" id="menu-icon"></div>
+		</div>
+		{% endif %}
+  </header>
+
+    <video id="background-video" autoplay loop muted poster=#" class="vid">
+		<source src="{% static 'tempvideo.mp4'%}" type="video/mp4" alt="hello">
+	</video>
+
+  {% if user.is_authenticated %}
+    <div class="new">
+    <div class="blog-slider ">
+        <div class="blog-slider__wrp swiper-wrapper">
+          <div class="blog-slider__item swiper-slide">
+            <div class="blog-slider__img">
+              <img src="{% static 'nikee.jpeg' %}" alt="">
+            </div>
+            <div class="blog-slider__content">
+              <span class="blog-slider__code">Category:-Website</span>
+              <div class="blog-slider__title">NIKE</div>
+              <!-- <div class="blog-slider__text"></div> -->
+              <a href="https://www.figma.com/file/nqfMGOFmhgia4NRx5PqrgX/NIKE?node-id=0%3A1&t=96C60xwIyCy5LVHP-1" class="blog-slider__button">Visit</a>
+            </div>
+          </div>
+          <div class="blog-slider__item swiper-slide">
+            <div class="blog-slider__img">
+              <img src="{% static 'n1m.jpeg' %}" alt="">
+            </div>
+            <div class="blog-slider__content">
+              <span class="blog-slider__code">Category:-Website</span>
+              <!-- <div class="blog-slider__title">NIKE </div> -->
+              <div class="blog-slider__text">NIKE webpage with attractive User Interface.</div>
+              <a href="https://www.figma.com/file/nqfMGOFmhgia4NRx5PqrgX/NIKE?node-id=0%3A1&t=96C60xwIyCy5LVHP-1" class="blog-slider__button">Visit</a>
+            </div>
+          </div>
+          
+          <div class="blog-slider__item swiper-slide">
+            <div class="blog-slider__img">
+              <img src="{% static 'nike.jpeg' %}" alt="">
+            </div>
+            <div class="blog-slider__content">
+              <span class="blog-slider__code">Category:-Website</span>
+              <!-- <div class="blog-slider__title">NIKE</div> -->
+              <div class="blog-slider__text">NIKE webpage developed using Figma</div>
+              <a href="https://www.figma.com/file/nqfMGOFmhgia4NRx5PqrgX/NIKE?node-id=0%3A1&t=96C60xwIyCy5LVHP-1" class="blog-slider__button">Visit</a>
+            </div>
+          </div>
+          
+        </div>
+        <div class="blog-slider__pagination"></div>
+      </div>
+    </div>
+
+    <div class="new1">
+      <div class="blog-slider">
+        <div class="blog-slider__wrp swiper-wrapper">
+          <div class="blog-slider__item swiper-slide">
+            <div class="blog-slider__img">
+              
+              <img src="{% static 'cm.jpeg' %}" alt="">
+            </div>
+            <div class="blog-slider__content">
+              <span class="blog-slider__code">Category:-Application</span>
+              <div class="blog-slider__title">Chatmate</div>
+              <!-- <div class="blog-slider__text">Chatmate a socializing application with attractive UI. </div> -->
+              <a href="https://www.figma.com/file/etu3DxXYhVwUnRxz6ccTNX/ChatMate?node-id=0%3A1&t=96C60xwIyCy5LVHP-1" class="blog-slider__button">Visit</a>
+            </div>
+          </div>
+          <div class="blog-slider__item swiper-slide">
+            <div class="blog-slider__img">
+              <img src="{% static 'cm1.jpeg' %}" alt="">
+            </div>
+            <div class="blog-slider__content">
+              <span class="blog-slider__code">Category: Application</span>
+              <!-- <div class="blog-slider__title">Lorem Ipsum Dolor2</div> -->
+              <div class="blog-slider__text">Interface of an application that helps users to have a chat and use the calling feature.</div>
+              <a href="https://www.figma.com/file/etu3DxXYhVwUnRxz6ccTNX/ChatMate?node-id=0%3A1&t=96C60xwIyCy5LVHP-1" class="blog-slider__button">Visit</a>
+            </div>
+          </div>
+          
+          <div class="blog-slider__item swiper-slide">
+            <div class="blog-slider__img">
+              <img src=" {% static 'ss8.png'%}" alt="" >
+            </div>
+            <div class="blog-slider__content">
+              <span class="blog-slider__code">Category : Application</span>
+              <!-- <div class="blog-slider__title">Lorem Ipsum Dolor</div> -->
+              <div class="blog-slider__text">Chatmate is developed on Figma</div>
+              <a href="https://www.figma.com/file/etu3DxXYhVwUnRxz6ccTNX/ChatMate?node-id=0%3A1&t=96C60xwIyCy5LVHP-1" class="blog-slider__button">Visit</a>
+            </div>
+          </div>
+          
+        </div>
+        <div class="blog-slider__pagination"></div>
+      </div>
+    </div>
+
+    <div class="new2">
+        <div class="blog-slider">
+          <div class="blog-slider__wrp swiper-wrapper">
+            <div class="blog-slider__item swiper-slide">
+              <div class="blog-slider__img">
+                
+                <img src="{% static 'ff.png' %}" alt="">
+              </div>
+              <div class="blog-slider__content">
+                <span class="blog-slider__code">Category:-Application</span>
+                <div class="blog-slider__title">FOOD MANIAC</div>
+                <!-- <div class="blog-slider__text">FOOD MANIAC an online food delivery application.</div> -->
+                <a href="https://www.figma.com/file/ITtjpA1letJMB6DUqgppa8/PIZZA-MANIAC?t=96C60xwIyCy5LVHP-1" class="blog-slider__button">Visit</a>
+              </div>
+            </div>
+            <div class="blog-slider__item swiper-slide">
+              <div class="blog-slider__img">
+                <img src="{% static 'ff1.png' %}" alt="">
+              </div>
+              <div class="blog-slider__content">
+                <!-- <span class="blog-slider__code">26 December 2019</span>
+                <div class="blog-slider__title">Lorem Ipsum Dolor2</div> -->
+                <div class="blog-slider__text">FOOD MANIAC an online food delivery application.</div>
+                <a href="https://www.figma.com/file/ITtjpA1letJMB6DUqgppa8/PIZZA-MANIAC?t=96C60xwIyCy5LVHP-1" class="blog-slider__button">Visit</a>
+              </div>
+            </div>
+            
+            <div class="blog-slider__item swiper-slide">
+              <div class="blog-slider__img">
+                <img src="{% static 'ff2.png' %}" alt="">
+              </div>
+              <div class="blog-slider__content">
+                <span class="blog-slider__code">Category:-Application</span>
+                <!-- <div class="blog-slider__title">Lorem Ipsum Dolor</div> -->
+                <div class="blog-slider__text">Food maniac is designed on Figma</div>
+                <a href="https://www.figma.com/file/ITtjpA1letJMB6DUqgppa8/PIZZA-MANIAC?t=96C60xwIyCy5LVHP-1" class="blog-slider__button">Visit</a>
+              </div>
+            </div>
+            
+          </div>
+          <div class="blog-slider__pagination"></div>
+        </div>
+      </div>
+
+      <div class="new3">
+        <div class="blog-slider">
+          <div class="blog-slider__wrp swiper-wrapper">
+            <div class="blog-slider__item swiper-slide">
+              <div class="blog-slider__img">
+                
+                <img src="{% static 'FB.jpeg' %}" alt="">
+              </div>
+              <div class="blog-slider__content">
+                <span class="blog-slider__code">Category:-Appliction</span>
+                <div class="blog-slider__title">FACEBOOK(MOCKUP)</div>
+                <!-- <div class="blog-slider__text">A Mockup design of FACEBOOK application.</div> -->
+                <a href="https://www.figma.com/file/9wyamctC4wGwCBr2RlK0i1/Untitled?t=96C60xwIyCy5LVHP-1" class="blog-slider__button">Visit</a>
+              </div>
+            </div>
+            <div class="blog-slider__item swiper-slide">
+              <div class="blog-slider__img">
+                <img src="{% static 'FB1.jpeg' %}" alt="">
+              </div>
+              <div class="blog-slider__content">
+                <!-- <span class="blog-slider__code">Category:-Appliction</span>
+                <div class="blog-slider__title">FACEBOOK(MOCKUP)</div> -->
+                <div class="blog-slider__text">A Mockup design of FACEBOOK application.</div>
+                <a href="https://www.figma.com/file/9wyamctC4wGwCBr2RlK0i1/Untitled?t=96C60xwIyCy5LVHP-1" class="blog-slider__button">Visit</a>
+              </div>
+            </div>
+            
+            <div class="blog-slider__item swiper-slide">
+              <div class="blog-slider__img">
+                <img src="{% static 'FB3.jpeg' %}" alt="">
+              </div>
+              <div class="blog-slider__content">
+                <span class="blog-slider__code">Category:-Appliction</span>
+                <!-- <div class="blog-slider__title">FACEBOOK(MOCKUP)</div> -->
+                <div class="blog-slider__text">Designed on Figma</div>
+                <a href="https://www.figma.com/file/9wyamctC4wGwCBr2RlK0i1/Untitled?t=96C60xwIyCy5LVHP-1" class="blog-slider__button">Visit</a>
+              </div>
+            </div>
+            
+          </div>
+          <div class="blog-slider__pagination"></div>
+        </div>
+      </div>
+
+      <div class="new4">
+        <div class="blog-slider">
+          <div class="blog-slider__wrp swiper-wrapper">
+            <div class="blog-slider__item swiper-slide">
+              <div class="blog-slider__img">
+                
+                <img src="{% static 'ap.jpeg' %}" alt="">
+              </div>
+              <div class="blog-slider__content">
+                <span class="blog-slider__code">Category:-Mobile interface design</span>
+                <div class="blog-slider__title">Apple</div>
+                <!-- <div class="blog-slider__text">A Design for Iphone 13.</div> -->
+                <a href="https://www.figma.com/file/n9McJOqkbEEG2CnOAmKlT2/Untitled?t=r7QgGf2Od8PGYQwZ-1" class="blog-slider__button">Visit</a>
+              </div>
+            </div>
+            <div class="blog-slider__item swiper-slide">
+              <div class="blog-slider__img">
+                <img src="{% static 'ss6.png' %}" alt="">
+              </div>
+              <div class="blog-slider__content">
+                <!-- <span class="blog-slider__code">Category:-Appliction</span>
+                <div class="blog-slider__title">FACEBOOK(MOCKUP)</div> -->
+                <div class="blog-slider__text">A Design for interface of Iphone 13</div>
+                <a href="https://www.figma.com/file/n9McJOqkbEEG2CnOAmKlT2/Untitled?t=r7QgGf2Od8PGYQwZ-1" class="blog-slider__button">Visit</a>
+              </div>
+            </div>
+            
+            <div class="blog-slider__item swiper-slide">
+              <div class="blog-slider__img">
+                <img src="{% static 'ss4.png' %}" alt="">
+              </div>
+              <div class="blog-slider__content">
+                <span class="blog-slider__code">Category:-Mobile interface design</span>
+                <!-- <div class="blog-slider__title">FACEBOOK(MOCKUP)</div> -->
+                <div class="blog-slider__text">Designed using figma</div>
+                <a href="https://www.figma.com/file/n9McJOqkbEEG2CnOAmKlT2/Untitled?t=r7QgGf2Od8PGYQwZ-1" class="blog-slider__button">Visit</a>
+              </div>
+            </div>
+            
+          </div>
+          <div class="blog-slider__pagination"></div>
+        </div>
+      </div>
+
+      <div class="new5">
+        <div class="blog-slider">
+          <div class="blog-slider__wrp swiper-wrapper">
+            <div class="blog-slider__item swiper-slide">
+              <div class="blog-slider__img">
+                
+                <img src="{% static 'sc.jpeg' %}" alt="">
+              </div>
+              <div class="blog-slider__content">
+                <span class="blog-slider__code">Category:-Appliction</span>
+                <div class="blog-slider__title">Snapchat(MOCKUP)</div>
+                <!-- <div class="blog-slider__text">A Mockup design of FACEBOOK application.</div> -->
+                <a href="https://www.figma.com/file/Ih9Uist1gJPJDXtO92mN2N/snapchat?t=r7QgGf2Od8PGYQwZ-1" class="blog-slider__button">Visit</a>
+              </div>
+            </div>
+            <div class="blog-slider__item swiper-slide">
+              <div class="blog-slider__img">
+                <img src="{% static 'ss1.png' %}" alt="">
+              </div>
+              <div class="blog-slider__content">
+                <!-- <span class="blog-slider__code">Category:-Appliction</span>
+                <div class="blog-slider__title">FACEBOOK(MOCKUP)</div> -->
+                <div class="blog-slider__text">A Mockup design of SNAPCHAT application.</div>
+                <a href="https://www.figma.com/file/Ih9Uist1gJPJDXtO92mN2N/snapchat?t=r7QgGf2Od8PGYQwZ-1" class="blog-slider__button">Visit</a>
+              </div>
+            </div>
+            
+            <div class="blog-slider__item swiper-slide">
+              <div class="blog-slider__img">
+                <img src="{% static 'ss2.png' %}" alt="">
+              </div>
+              <div class="blog-slider__content">
+                <span class="blog-slider__code">Category:-Application</span>
+                <!-- <div class="blog-slider__title">FACEBOOK(MOCKUP)</div> -->
+                <div class="blog-slider__text">Designed on Figma</div>
+                <a href="https://www.figma.com/file/Ih9Uist1gJPJDXtO92mN2N/snapchat?t=r7QgGf2Od8PGYQwZ-1" class="blog-slider__button">Visit</a>
+              </div>
+            </div>
+            
+          </div>
+          <div class="blog-slider__pagination"></div>
+        </div>
+      </div>
+     
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js'></script>
+<script  src="{% static 'tj.js' %}"></script> 
+{% else %}                           <!-- Using django syntax for else statement,if the user is not authenticated,display the following text -->
+<div class="t2"><center><h1 class="a1">YOU NEED TO LOGIN BEFORE ACCESSING THE TEMPLATES</h1>
+<button class="a1 glow-on-hover "><a href="{% url 'login' %}" style="color:aliceblue;">LOG IN</a></button></center></div>
+{% endif %}
+  </body>
+  </html>

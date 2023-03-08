@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Blog1</title>
+  <link rel="icon" type="image/x-icon" href="logo.png">
+  <link rel="stylesheet" href="{% static 'blog1a.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+
+</head>
+
+<body>
+  <!DOCTYPE html>
+  <html lang="en-US">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'>
+    <link rel="stylesheet" href="./style1.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <script>
+      window.ga = window.ga || function () {
+        (ga.q = ga.q || []).push(arguments)
+      };
+      ga.l = +new Date;
+      ga('create', 'UA-105392568-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+  </head>
+
+  <body>
+    <header>
+		<a href="{% url 'home' %}" class="logo"><span>UI Tech</span></a>
+
+		<ul class="navbar">
+			<li><a href="{% url 'home' %}" class="active">Home</a></li>
+			<li><a href="{% url 'blog' %}">Blog</a></li>
+			<li><a href="{% url 'temp' %}">Templates</a></li>
+			<li><a href="{% url 'aboutus' %}">About</a></li>
+			<li><a href="{% url 'contact' %}">Contact</a></li>
+		</ul>
+
+		
+    {% if user.is_authenticated %}
+		<h4>Hello,{{user.username}}</h4>
+		<a href="{% url 'logout' %}"><button class="glow-on-hover"> LOGOUT</button></a>
+		{% else %}
+		<div class="main">
+			<a href="{% url 'login' %}" class="user"><i class="ri-user-fill"></i>Sign In</a>
+			<a href="{% url 'register' %}">Register</a>
+			<div class="bx bx-menu" id="menu-icon"></div>
+		</div>
+		{% endif %}
+	</header>
+  <section class="butt ">
+    <a href="{% url 'B5' %}"><button class="btn1 glow-on-hover" id="btn1">
+      Next Page
+    </button></a>
+  
+  <div class="content1">
+    <div class="title1">
+      DESIGNING A GOOD INTERFACE 
+      </div>
+    <p class="txt">    Designing a good user interface (UI) involves several steps, here are the most important ones to keep in mind:
+      <br><br>Understand the user: Start by conducting research and identifying your target audience. This will help you understand their needs, preferences, and goals.
+      <br><br>Define the user flow: Create a user flow diagram that outlines the steps a user will take to complete a task. This will help you identify areas where the user may need assistance and make the design process more efficient.
+      <br><br>Create a wireframe: Create a low-fidelity wireframe to help you establish the overall layout and structure of your UI.
+      <br><br>Choose colors and typography: Select colors and typography that align with your brand and appeal to your target audience.
+      <br><br>Add visual elements: Add visual elements, such as icons, images, and illustrations, to help guide the user and make the UI more visually appealing.
+      <br><br>Add interactivity: Add interactivity, such as hover states, animations, and transitions, to make the UI more engaging and dynamic.
+      <br><br>Test the UI: Test the UI with real users to get feedback and identify any areas for improvement.
+      <br><br>Refine the UI: Based on the feedback, refine the UI to make it more user-friendly and effective.
+      <br><br>Implement the UI: Implement the UI using HTML, CSS, and JavaScript or by using a design tool like Figma or Sketch.
+      <br><br>Continuously iterate: Continuously test and refine the UI to make sure it remains effective and user-friendly.
+      By following these steps, you can create a UI that meets the needs of your users and provides a positive experience.<br><br>
+      
+     
+      <b> Colour Scheme</b><br>
+      Choosing the right colour scheme for a website is an important aspect of UI design, here are some steps to consider while making that choice:
+      <br><br>Identify your brand: Start by understanding your brand and its values. The colour scheme should reflect your brand and its personality.
+      <br><br>Consider your target audience: Consider the preferences and cultural background of your target audience. Different cultures have different meanings and associations with different colours.
+      <br><br>Use colour psychology: Colour psychology is the study of how colours affect human emotions and behaviours. Consider how colours can evoke different emotions, such as blue for trust and calmness, red for energy and excitement, and green for growth and renewal.
+      <br><br>Choose a base colour: Choose a base colour that represents your brand and sets the tone for the rest of the colour scheme.
+      <br><br>Create a colour palette: Create a colour palette that includes the base colour and several other colours that complement it. The colour palette should be harmonious and easy on the eyes.
+      <br><br>Use a colour tool: Use a colour tool, such as Adobe Color or Coolors, to help you create a colour palette. These tools provide a wide range of colour options and help you create colour schemes with ease.
+      <br><br>Consider accessibility: Consider accessibility and make sure the colour scheme meets WCAG guidelines. For example, ensure that there is enough contrast between the text and the background colour.
+      By following these steps, you can choose a colour scheme that aligns with your brand and appeals to your target audience, while also considering accessibility and usability.
+      
+      
+      
+      
+    </p>
+  </div><br>
+  <script>
+    const button = document.querySelector('#btn1');
+
+button.disabled = true;
+
+window.addEventListener('scroll', () => {
+
+  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+    button.disabled = false;
+  }
+});
+  </script>
+  </body>
+
+  </html>

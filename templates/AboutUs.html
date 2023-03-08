@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>About Us</title>
+  <link rel="icon" type="image/x-icon" href="logo.png">
+  <link rel="stylesheet" href="{% static 'abs.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  
+
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Login</title>
+  <link rel="icon" type="image/x-icon" href="logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+  <script>
+    window.ga = window.ga || function() {
+      (ga.q = ga.q || []).push(arguments)
+    };
+    ga.l = +new Date;
+    ga('create', 'UA-105392568-1', 'auto'); 
+    ga('send', 'pageview');
+  </script>
+
+</head>
+
+<body>
+  <header>
+		<a href="{% url 'home' %}" class="logo"><span>UI Tech</span></a>
+
+		<ul class="navbar">
+			<li><a href="{% url 'home' %}" >Home</a></li>
+			<li><a href="{% url 'blog' %}">Blog</a></li>
+			<li><a href="{% url 'temp' %}">Templates</a></li>
+			<li><a href="{% url 'aboutus' %}"class="active">About</a></li>
+			<li><a href="{% url 'contact' %}">Contact</a></li>
+		</ul>
+
+		{% if user.is_authenticated %}
+		<h4>Hello,{{user.username}}</h4>
+		<a href="{% url 'logout' %}"><button class="glow-on-hover"> LOGOUT</button></a>
+		{% else %}
+		<div class="main">
+			<a href="{% url 'login' %}" class="user"><i class="ri-user-fill"></i>Sign In</a>
+			<a href="{% url 'register' %}">Register</a>
+			<div class="bx bx-menu" id="menu-icon"></div>
+		</div>
+		{% endif %}
+	</header>
+    
+ 
+    
+    <section>
+      <img src="{% static 'stars.png' %}" alt="star" id="stars">
+      <img src="{% static 'moon.png' %}" alt="star" id="moon">
+      <img src="{% static 'mountains_behind.png' %}" alt="star" id="mountb">
+      <h2 id="text">UI TECH</h2>
+      
+      <img src="{% static 'mountains_front.png' %}" alt="star" id="mountf">
+  </section>
+  <div class="sec" id="sec">
+    <center>   
+    <h2 >ABOUT US</h2>
+      <h5> (Hover over)</h5>
+      
+      <div class="card">
+          
+          <br> 
+                UI Tech aims to help every keen learner be it a person who wants to start the designing career or 
+          any person who wants to design their own website or application for their business. We will provide them 
+          with the knowledge of how UI/UX is important and how a perfectly designed website can help them 
+          increase their customer base. Providing every learner with the blogs and videos about UI/UX, teaching 
+          them how to use applications like Figma to design, access to pre-made templates, application suggestions 
+          for designing, certificate at the end of the modules. So, any user can learn the importance, fundamentals 
+          of making a good UI along with providing the best User Experience, practicing and learning at the same 
+          time from our website. 
+      </div>
+    </center>
+        
+      <script>
+          let stars = document.getElementById('stars');
+          let moon = document.getElementById('moon');
+          let mountb = document.getElementById('mountb');
+          let text = document.getElementById('text');
+          let btn = document.getElementById('btn');
+          let mountf = document.getElementById('mountf');
+
+          window.addEventListener('scroll', function () {
+              let value = window.scrollY;
+              stars.style.left = value * 0.25 + 'px';
+              moon.style.top = value * 1.0 + 'px';
+              mountb.style.top = value * 0.5 + 'px';
+              mountf.style.top = value * 0 + 'px';
+              text.style.marginRight = value * 4 + 'px';
+          })
+      </script>
+
+  </div>
+</body>
+
+  

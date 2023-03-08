@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Contact</title>
+  <link rel="icon" type="image/x-icon" href="logo.png">
+  <link rel="stylesheet" href="{% static 'contact.css '%}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+
+</head>
+
+<body>
+  <!DOCTYPE html>
+  <html lang="en-US">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <script>
+      window.ga = window.ga || function () {
+        (ga.q = ga.q || []).push(arguments)
+      };
+      ga.l = +new Date;
+      ga('create', 'UA-105392568-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+  </head>
+
+  <body>
+    <header>
+      <a href="{% url 'home' %}" class="logo"><span>UI Tech</span></a>
+  
+      <ul class="navbar">
+        <li><a href="{% url 'home' %}" >Home</a></li>
+        <li><a href="{% url 'blog' %}">Blog</a></li>
+        <li><a href="{% url 'temp' %}">Templates</a></li>
+        <li><a href="{% url 'aboutus' %}">About</a></li>
+        <li><a href="{% url 'contact'  %}"class="active">Contact</a></li>
+      </ul>
+  
+      {% if user.is_authenticated %}
+      <h4>Hello,{{user.username}}</h4>
+      <a href="{% url 'logout' %}"><button class="glow-on-hover"> LOGOUT</button></a>
+      {% else %}
+      <div class="main">
+        <a href="{% url 'login' %}" class="user"><i class="ri-user-fill"></i>Sign In</a>
+        <a href="{% url 'register' %}">Register</a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+      </div>
+      {% endif %}
+    </header>
+    <div>
+    <img src="{% static 'pexels-florian-eckerle-13127582.jpg' %}" alt=""  class="img2">
+  </div>
+    <div class="container">
+      <div class="content">
+        <div class="image-box">
+          <video id="background-video" autoplay loop muted poster="#" class="vid">
+            <source src="{% static 'back_.mp4'%}" type="video/mp4">
+          </video>
+        </div>
+        <form method="POST">
+          {% csrf_token %}
+          <div class="topic">Contact Us</div>
+          <div class="input-box">
+            <input type="text" required name="name">
+            <label>Enter your name</label>
+          </div>
+          <div class="input-box">
+            <input type="text" required name="email">
+            <label>Enter your email</label>
+          </div>
+          <div class="input-box">
+            <input type="text" required name="subject">
+            <label>Enter your message</label>
+          </div>
+          <div class="input-box">
+            <input type="submit" value="Send Message">
+          </div>
+        </form>
+    </div>
+    </div>
+
+  </body>
+
+  </html>

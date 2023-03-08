@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Blog1</title>
+  <link rel="icon" type="image/x-icon" href="logo.png">
+  <link rel="stylesheet" href="{% static 'blog1a.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+
+</head>
+
+<body>
+  <!DOCTYPE html>
+  <html lang="en-US">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'>
+    <link rel="stylesheet" href="./style1.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <script>
+      window.ga = window.ga || function () {
+        (ga.q = ga.q || []).push(arguments)
+      };
+      ga.l = +new Date;
+      ga('create', 'UA-105392568-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+  </head>
+
+  <body>
+    <header>
+		<a href="{% url 'home' %}" class="logo"><span>UI Tech</span></a>
+
+		<ul class="navbar">
+			<li><a href="{% url 'home' %}" class="active">Home</a></li>
+			<li><a href="{% url 'blog' %}">Blog</a></li>
+			<li><a href="{% url 'temp' %}">Templates</a></li>
+			<li><a href="{% url 'aboutus' %}">About</a></li>
+			<li><a href="{% url 'contact' %}">Contact</a></li>
+		</ul>
+
+		
+    {% if user.is_authenticated %}
+		<h4>Hello,{{user.username}}</h4>
+		<a href="{% url 'logout' %}"><button class="glow-on-hover"> LOGOUT</button></a>
+		{% else %}
+		<div class="main">
+			<a href="{% url 'login' %}" class="user"><i class="ri-user-fill"></i>Sign In</a>
+			<a href="{% url 'register' %}">Register</a>
+			<div class="bx bx-menu" id="menu-icon"></div>
+		</div>
+		{% endif %}
+	</header>
+  <section class="butt ">
+    <a href="{% url 'B3' %}"><button class="btn1 glow-on-hover" id="btn1">
+      Next Page
+    </button></a>
+  <div class="content1">
+    <div class="title1">
+      FIGMA
+      </div>
+    <p class="txt">     One of the most used tools by designers nowadays was developed back in the year 2016 on the 27th of
+      September but it gained popularity in 2020. It is a free platform that will help you to bring your creative
+      ideas to reality for your virtual designs.
+      <br>A highly collaborative platform that helps us to create interactive designs, in a collaborative
+      environment. One of the most important features is that it helps us to work with our entire team together,
+      sharing designs with the developers at an early stage might be helpful for us to make sure that we are
+      avoiding unnecessary iterations that might occur later and make our tasks tedious.<br>
+      Prototyping becomes easier with Figma The compatibility of this particular software on different Operating
+      systems like Windows and Mac Os is termed spectacular. Also, this is a website that is available on the web
+      so that we can use this service without even downloading it. While using Figma on devices like mobile phones
+      it is providing just the option to view the projects we created prior and we can't edit them. The usage of
+      Figma is growing since 2020 and is used by tremendous designers to create the best possible designs we also
+      do have the feature to view the designs that we created in the required code formats which can help us to
+      code in different languages like Html, CSS and create our similar designs for our website. This is one of
+      the most useful features for developers who are trying to build an application or any kind of website.
+      Jamboard is the service provided by Figma that can help us at the initial phase of the development to
+      brainstorm multiple possibilities of solutions and organize our ideas accordingly.
+
+      <b>USE OF JAMBOARD:
+      </b>
+      Jamboard is a digital whiteboard and collaboration platform by Google. It can be used within Figma by
+      inserting a live link to a Jamboard in a frame. This allows teams to access and edit the same Jamboard
+      within a Figma design project. This can be useful for collaborative brainstorming, mapping out ideas, and
+      sketching out rough designs.
+      Benefits of using figma over other softwares?<br>
+      There are several benefits of using Figma over other design software:<br>
+      <br><b>Collaboration: </b><br>Figma has real-time collaboration features, allowing multiple designers to
+      work on the same file simultaneously, making it easy for teams to work together.
+      <br><b>User experience:</b> <br>Figma has a modern and intuitive user interface that makes it easy to use,
+      even for beginners.
+      <br><b>Cross-platform compatibility:</b><br> Figma works on Windows, Mac, and in the browser, so designers
+      can access their work from any device.
+      <br><b>Auto-versioning:</b><br> Figma automatically saves every change made to a file, making it easy to
+      revert to a previous version if needed.
+      <br><b>Browser-based:</b><br> Figma is a browser-based tool, which means that there's no need to download
+      and install software.
+      <br><b>Affordable:</b><br> Figma has a lower cost of entry compared to other design tools, with a free plan
+      and affordable pricing for teams.
+      <br><b>Integration:</b><br> Figma integrates with a wide range of tools, including project management and
+      development tools, making it easier for design teams to work with other teams.
+
+
+      
+    </p>
+  </div><br>
+  <script>
+    const button = document.querySelector('#btn1');
+
+button.disabled = true;
+
+window.addEventListener('scroll', () => {
+
+  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+    button.disabled = false;
+  }
+});
+  </script>
+  </body>
+
+  </html>

@@ -1,0 +1,157 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>UITech</title>
+
+	<link rel="icon" type="image/x-icon" href="{% static 'logo.png'%}">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="{% static './style.css' %}">
+
+</head>
+
+<body>
+	<video id="background-video" autoplay loop muted poster="#" class="vid">
+		<source src="{% static 'back_.mp4'%}" type="video/mp4" alt="hello">
+	</video>
+
+	<header>
+		<a href="{% url 'home' %}" class="logo"><span>UI Tech</span></a>
+
+		<ul class="navbar">
+			<li><a href="{% url 'home' %}" class="active">Home</a></li>
+			<li><a href="{% url 'blog' %}">Blog</a></li>
+			<li><a href="{% url 'temp' %}">Templates</a></li>
+			<li><a href="{% url 'aboutus' %}">About</a></li>
+			<li><a href="{% url 'contact' %}">Contact</a></li>
+		</ul>
+
+		{% if user.is_authenticated %}
+		<h4>Hello,{{user.username}}</h4>
+		<a href="{% url 'logout' %}"><button class="glow-on-hover"> LOGOUT</button></a>
+		{% else %}
+		<div class="main">
+			<a href="{% url 'login' %}" class="user"><i class="ri-user-fill"></i>Sign In</a>
+			<a href="{% url 'register' %}">Register</a>
+			<div class="bx bx-menu" id="menu-icon"></div>
+		</div>
+		{% endif %}
+	</header>
+	<div class='split-pane col-xs-12 col-sm-6 uiux-side'>
+		<div>
+		  
+		  <div class='text-content'>
+			<div class="bold">What is</div>
+			<div class='big'>UI?</div>
+		  </div>
+		  <a href=#UIVIDEO><button class="button">
+			User Interface
+		  </button></a>
+		</div>
+	  </div>
+	  <div class='split-pane col-xs-12 col-sm-6 frontend-side'>
+		<div>
+		  
+		  <div class='text-content'>
+			<div class="bold">What is</div>
+			<div class='big'>UX?</div>
+		  </div>
+		  <a href=#UXVIDEO><button class="button">
+			User Experience
+		  </button></a>
+		</div>
+	  </div>
+	  <div id='split-pane-or'>
+	  </div>
+	<section>
+		<video id="background-video" autoplay loop muted poster="#"
+			class="vid">
+			<source src="{% static 'Untitled video - Made with Clipchamp (4).mp4'%}" type="video/mp4">
+		</video>
+	</section>
+	<section>
+		<video id="UIVIDEO" autoplay loop muted poster="#"
+			class="vid">
+			<source src="{% static 'UI.mp4'%}" type="video/mp4">
+		</video>
+	</section>
+	<section>
+		<video id="UXVIDEO" autoplay loop muted poster="#"
+			class="vid">
+			<source src="{% static 'UX.mp4'%}" type="video/mp4">
+		</video>
+	</section>
+	<footer class="site-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-6">
+					<h6>About</h6>
+					<p class="text-justify">UI Tech <i>(Learn Explore Create)</i> is an initiative to help the upcoming
+						UI designers. UI Tech focuses on providing the most accurate Documentation,Blogs,Videos and
+						Templates for reference. In this course we will teach them to create a Good UI using Figma
+						software. We will also provide certificate after the course is completed. </p>
+				</div>
+
+				<div class="col-xs-6 col-md-3">
+					<h6>Categories</h6>
+					<ul class="footer-links">
+						<li><a href="https://en.wikipedia.org/wiki/User_experience_design">UI/UX</a></li>
+						<li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
+						<li><a href="https://www.figma.com/">Figma</a></li>
+						<li><a href="#">Blogs</a></li>
+						<li><a href="#">Templates</a></li>
+					</ul>
+				</div>
+
+				<div class="col-xs-6 col-md-3">
+					<h6>Quick Links</h6>
+					<ul class="footer-links">
+						<li><a href="#">About Us</a></li>
+						<li><a href="#">Contact Us</a></li>
+					</ul>
+				</div>
+			</div>
+			<hr>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-sm-6 col-xs-12">
+					<p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by
+						<a href="index.html">UI Tech</a>.
+					</p>
+				</div>
+
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<ul class="social-icons">
+						<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+						<li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script type="text/javascript" src="{% static 'script.js'%}"></script>
+
+</body>
+
+</html>
+
